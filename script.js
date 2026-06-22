@@ -2732,3 +2732,21 @@ function calculateAndShowStatisticsGraphAndCounters() {
 document.addEventListener("DOMContentLoaded", () => {
   initializeDictionaryApp();
 });
+
+async function probarStorage() {
+  console.log("Intentando guardar...");
+  
+  const { data, error } = await _supabase
+    .from('date')
+    .insert([ { texto: "Hola desde mi web", autor: "Usuario" } ]);
+
+  if (error) {
+    console.error("Error al guardar:", error);
+    alert("Hubo un error al guardar. Revisa la consola.");
+  } else {
+    console.log("¡Éxito! Datos guardados:", data);
+    alert("¡Datos guardados correctamente en la nube!");
+  }
+}
+
+probarStorage();
