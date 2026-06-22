@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT DICTIONARY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="virtual-environment">
+      <div class="ambient-glow"></div>
+      <div class="ambient-glow secondary"></div>
+
+      <header id="main-header">
+        <div class="header-left">
+          <div class="logo-box">
+            <i class="fa-solid fa-terminal pulse-icon"></i>
+          </div>
+          <h1 class="header-title">IT DICTIONARY</h1>
+        </div>
+        <div class="header-right">
+          <button id="theme-toggle" class="system-btn" title="Toggle Ambience">
+            <i class="fa-solid fa-bolt"></i>
+          </button>
+          <button id="sound-toggle" class="system-btn" title="Toggle Sound FX">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="global-wrapper">
+        <div class="control-panel">
+          <div class="search-section">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input
+                type="text"
+                id="terms-search"
+                placeholder="Search concept or letter..."
+                autocomplete="off"
+              />
+              <button id="clear-search" class="icon-btn-clear">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-wrapper">
+            <div class="pill-group" id="alphabet-pills">
+              <button class="pill active" data-range="all">ALL</button>
+              <button class="pill" data-range="A-E">A - E</button>
+              <button class="pill" data-range="F-J">F - J</button>
+              <button class="pill" data-range="K-O">K - O</button>
+              <button class="pill" data-range="P-T">P - T</button>
+              <button class="pill" data-range="U-Z">U - Z</button>
+              <button class="pill" data-range="nums">#</button>
+            </div>
+          </div>
+
+          <div class="actions-wrapper">
+            <button
+              id="add-doc-page-btn"
+              class="primary-action-btn"
+              style="
+                background-color: #0d9488;
+                border-color: #0d9488;
+                color: #fff;
+              "
+            >
+              <i class="fa-solid fa-file-invoice"></i> + ATTACHMENTS
+            </button>
+            <button id="quick-stats-btn" class="secondary-action-btn">
+              <i class="fa-solid fa-chart-simple"></i> STATS
+            </button>
+          </div>
+        </div>
+
+        <div class="book-container">
+          <div id="it-book" class="it-book">
+            <div class="book-cover front-cover" id="page-cover-front">
+              <div class="cover-design">
+                <div class="metal-corner top-left"></div>
+                <div class="metal-corner top-right"></div>
+                <div class="metal-corner bottom-left"></div>
+                <div class="metal-corner bottom-right"></div>
+                <div class="leather-texture"></div>
+                <div class="vintage-basing"></div>
+                <div class="cover-content">
+                  <span class="academy-category">// ACADEMIC COURSE</span>
+                  <h1 class="main-cover-title">TECHNICAL ENGLISH I</h1>
+                  <div class="golden-crest">
+                    <div class="crest-circle">
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+                  </div>
+                  <h2 class="main-cover-subtitle">IT DICTIONARY</h2>
+                  <div class="ornament-line"></div>
+                  <div class="student-info-box">
+                    <div class="info-row">
+                      <span class="info-lbl">MEMBERS:</span>
+                      <span class="info-val">Andis Peña & Matias Lis</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-lbl">GROUP:</span>
+                      <span class="info-val">2nd MB</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-lbl">TEACHER:</span>
+                      <span class="info-val">Lorena Punciolo</span>
+                    </div>
+                  </div>
+                  <button class="open-book-btn" id="start-reading-btn">
+                    OPEN DICTIONARY <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-page page-template left-page" id="page-index-left">
+              <div class="page-paper">
+                <div class="page-margin-line"></div>
+                <div class="page-header-row">
+                  <span class="page-number-label">IND-01</span>
+                  <span class="book-stamp-label">TABLE OF CONTENTS</span>
+                </div>
+                <div class="page-body">
+                  <div class="index-title-heading">
+                    <h2>GENERAL INDEX</h2>
+                    <div class="heading-line"></div>
+                  </div>
+                  <div
+                    class="index-alphabet-trigger-container"
+                    style="margin-bottom: 20px"
+                  >
+                    <button
+                      id="open-letters-search-btn"
+                      class="primary-action-btn"
+                      style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 8px;
+                        font-family: var(--sans-font);
+                        background-color: var(--accent-color);
+                        border-color: var(--accent-color);
+                        color: #fff;
+                        padding: 10px 15px;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition:
+                          transform 0.2s,
+                          background-color 0.2s;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-arrow-down-a-z"
+                        style="font-size: 0.95rem"
+                      ></i>
+                      BROWSE BY LETTER (A - Z)
+                    </button>
+                  </div>
+                  <div class="index-list-container" id="left-index-list"></div>
+                </div>
+                <div class="page-footer-row">
+                  <span>IT DICTIONARY</span>
+                  <span class="page-counter">PG. A</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="book-page page-template right-page"
+              id="page-index-right"
+            >
+              <div class="page-paper">
+                <div class="page-margin-line"></div>
+                <div class="page-header-row">
+                  <span class="book-stamp-label">COURSE INFORMATION</span>
+                  <span class="page-number-label">IND-02</span>
+                </div>
+                <div class="page-body">
+                  <div class="course-intro-block">
+                    <h3>PRESENTATION</h3>
+                    <p>
+                      This technical dictionary represents an interactive
+                      academic study assistant for learning and organizing
+                      computer science and information technology terms in
+                      Technical English.
+                    </p>
+                    <div class="bento-highlight">
+                      <div class="bento-tile">
+                        <span class="tile-num" id="stat-total-pages">0</span>
+                        <span class="tile-lbl">PAGES</span>
+                      </div>
+                      <div class="bento-tile">
+                        <span class="tile-num" id="stat-total-entries">0</span>
+                        <span class="tile-lbl">ITEMS</span>
+                      </div>
+                      <div class="bento-tile">
+                        <span class="tile-num" id="stat-canvas-drawings"
+                          >0</span
+                        >
+                        <span class="tile-lbl">MAPS</span>
+                      </div>
+                    </div>
+                    <div class="quick-manual">
+                      <h4>QUICK INSTRUCTIONS</h4>
+                      <ul>
+                        <li>
+                          <i class="fa-solid fa-check"></i> Pages are
+                          automatically organized in lexicographical order.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-check"></i> Click "NEW PAGE" to
+                          instantly append any concept or title discussed in
+                          class.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-check"></i> Fill pages with
+                          text, sketches, mind maps, documents, drawings, or
+                          audio recordings.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-footer-row">
+                  <span>INTRODUCTORY SECTION</span>
+                  <span class="page-counter">PG. B</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="book-page page-template left-page dynamic-container"
+              id="book-dynamic-template-left"
+            >
+              <div class="page-paper">
+                <div class="page-margin-line"></div>
+                <div class="page-watermark"></div>
+                <div class="page-header-row">
+                  <span class="page-letter-badge" id="dyn-letter-left">A</span>
+                  <span class="book-stamp-label" id="dyn-stamp-left"
+                    >TECHNICAL DICTIONARY</span
+                  >
+                </div>
+                <div class="page-body">
+                  <div class="dynamic-page-content" id="dyn-content-left"></div>
+                </div>
+                <div class="page-footer-row">
+                  <span id="dyn-footer-term-left">TERMINOLOGY</span>
+                  <span class="page-counter" id="dyn-num-left">PG. L</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="book-page page-template right-page dynamic-container"
+              id="book-dynamic-template-right"
+            >
+              <div class="page-paper">
+                <div class="page-margin-line"></div>
+                <div class="page-watermark"></div>
+                <div class="page-header-row">
+                  <span class="book-stamp-label" id="dyn-stamp-right"
+                    >TECHNICAL DICTIONARY</span
+                  >
+                  <span class="page-letter-badge" id="dyn-letter-right">A</span>
+                </div>
+                <div class="page-body">
+                  <div
+                    class="dynamic-page-content"
+                    id="dyn-content-right"
+                  ></div>
+                </div>
+                <div class="page-footer-row">
+                  <span id="dyn-footer-term-right">TERMINOLOGY</span>
+                  <span class="page-counter" id="dyn-num-right">PG. R</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-cover back-cover" id="page-cover-back">
+              <div class="cover-design">
+                <div class="metal-corner top-left"></div>
+                <div class="metal-corner top-right"></div>
+                <div class="metal-corner bottom-left"></div>
+                <div class="metal-corner bottom-right"></div>
+                <div class="leather-texture"></div>
+                <div class="vintage-basing"></div>
+                <div class="cover-content">
+                  <div class="crest-circ">
+                    <i class="fa-solid fa-book"></i>
+                  </div>
+                  <h3 class="back-cover-title">TECHNICAL ENGLISH I</h3>
+                  <p
+                    class="back-cover-desc"
+                    style="
+                      font-size: 0.85rem;
+                      line-height: 1.4;
+                      margin-bottom: 25px;
+                      color: #a4b2c6;
+                    "
+                  >
+                    This academic study chronicle serves as an interactive
+                    compilation of terms, diagrams, drawings, and voice
+                    recordings designed for organizing tech concepts.
+                  </p>
+                  <div class="book-barcode">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar shadow"></div>
+                    <div class="bar shadow"></div>
+                    <span class="barcode-number">2026-T1-AN-MA</span>
+                  </div>
+                  <button class="open-book-btn" id="close-book-btn">
+                    RETURN TO COVER <i class="fa-solid fa-rotate-left"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-navigation-overlay">
+            <button
+              id="book-prev-btn"
+              class="nav-control-circle"
+              title="Previous Page"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="pagination-bubble" id="pagination-status">COVER</div>
+            <button
+              id="book-next-btn"
+              class="nav-control-circle"
+              title="Next Page"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="add-entry-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box">
+          <button class="modal-close" id="close-add-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i class="fa-solid fa-book-sparkles"></i>
+            <h3>CREATE NEW DICTIONARY PAGE</h3>
+          </div>
+          <div class="modal-body">
+            <form id="add-entry-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="new-term-input">PAGE TITLE / CONCEPT</label>
+                <input
+                  type="text"
+                  id="new-term-input"
+                  required
+                  placeholder="e.g., Cryptography, Algorithms, 1. Binary Search..."
+                  autofocus
+                />
+                <div class="input-glow-bar"></div>
+              </div>
+              <div class="dictionary-helper-hint">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <span
+                  >The system instantly indexes pages alphabetically by primary
+                  letter/symbol. Upon creation, you will turn to this page and
+                  can immediately attach learning materials.</span
+                >
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="form-cancel-btn"
+                  id="cancel-add-modal"
+                >
+                  CANCEL
+                </button>
+                <button
+                  type="submit"
+                  class="form-submit-btn"
+                  id="save-page-btn"
+                >
+                  CREATE PAGE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="add-class-content-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box large-modal">
+          <button class="modal-close" id="close-class-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i class="fa-solid fa-file-circle-plus"></i>
+            <h3>ADD LECTURE MATERIALS / RESOURCES</h3>
+            <span class="target-page-indicator" id="target-page-title-label"
+              >PAGE: N/A</span
+            >
+          </div>
+          <div class="modal-body scrollable-body">
+            <div class="class-content-selector-grid">
+              <div class="selection-card" data-content-type="paragraph">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-paragraph"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>LECTURE TEXT / DEFINITIONS</h4>
+                  <p>
+                    Write definitions, notes, syntax documentation, or
+                    translations directly.
+                  </p>
+                </div>
+              </div>
+
+              <div class="selection-card" data-content-type="mindmap">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>VISUAL SKETCH / MIND MAP</h4>
+                  <p>
+                    Sketch architectural diagrams, link keywords or construct
+                    complex conceptual maps.
+                  </p>
+                </div>
+              </div>
+
+              <div class="selection-card" data-content-type="image">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>UPLOAD SCREENSHOT / IMAGE</h4>
+                  <p>
+                    Upload photos of the blackboard, textbooks or reference
+                    guides (JPG, PNG).
+                  </p>
+                </div>
+              </div>
+
+              <div class="selection-card" data-content-type="audio">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-microphone"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>VOICE MEMO / AUDIO</h4>
+                  <p>
+                    Record a spoken pronunciation guide or upload pre-recorded
+                    academic audio explanatory logs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="selection-card" data-content-type="pdf">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>ANY FILE / DOCUMENT / MEDIA</h4>
+                  <p>
+                    Upload files of any extension (PDF, Excel, Word, Photos,
+                    Videos, Audio, etc.) as page resources.
+                  </p>
+                </div>
+              </div>
+
+              <div class="selection-card" data-content-type="link">
+                <div class="selection-icon">
+                  <i class="fa-solid fa-link"></i>
+                </div>
+                <div class="selection-info">
+                  <h4>WEB LINK / URL RESOURCE</h4>
+                  <p>
+                    Attach reference websites, online documents, videos,
+                    tutorials, or links.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="wizard-step-container hidden"
+              id="wizard-paragraph-step"
+            >
+              <h4 class="step-title">
+                <i class="fa-solid fa-quote-left"></i> WRITE TERMS & DEFINITIONS
+              </h4>
+              <div class="form-group text-area-group">
+                <label for="step-paragraph-text">PARAGRAPH CONTENT</label>
+                <textarea
+                  id="step-paragraph-text"
+                  rows="8"
+                  placeholder="Type or paste core summaries, grammatical breakdowns, translation notes, or technical definitions..."
+                ></textarea>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="wizard-back-btn">
+                  <i class="fa-solid fa-chevron-left"></i> SELECT OTHER
+                </button>
+                <button
+                  type="button"
+                  class="wizard-confirm-btn"
+                  id="confirm-paragraph-btn"
+                >
+                  INSERT PARAGRAPH
+                </button>
+              </div>
+            </div>
+
+            <div class="wizard-step-container hidden" id="wizard-image-step">
+              <h4 class="step-title">
+                <i class="fa-solid fa-upload"></i> UPLOAD GRAPHIC RESOURCE
+              </h4>
+              <div class="file-uploader-dropzone" id="image-dropzone">
+                <input
+                  type="file"
+                  id="image-file-input"
+                  accept="image/*"
+                  class="hidden-file-input"
+                />
+                <div class="dropzone-prompt">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <p>
+                    Drag graphic file here or click to select from file system
+                  </p>
+                  <span>Supported: JPG, PNG, WEBP. Maximum: 5MB</span>
+                </div>
+                <div class="dropzone-preview hidden" id="image-upload-preview">
+                  <img src="" alt="Loaded Asset" />
+                  <span class="preview-filename">file.png</span>
+                </div>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="wizard-back-btn">
+                  <i class="fa-solid fa-chevron-left"></i> SELECT OTHER
+                </button>
+                <button
+                  type="button"
+                  class="wizard-confirm-btn"
+                  id="confirm-image-btn"
+                >
+                  ASSOCIATE IMAGE
+                </button>
+              </div>
+            </div>
+
+            <div class="wizard-step-container hidden" id="wizard-audio-step">
+              <h4 class="step-title">
+                <i class="fa-solid fa-volume-high"></i> ATTACH AUDIO FILE
+              </h4>
+              <div class="audio-creator-box">
+                <div class="recording-tabs" style="display: none">
+                  <button class="rec-tab-btn" id="tab-record-mic">
+                    LIVE RECORDING
+                  </button>
+                  <button class="rec-tab-btn active" id="tab-upload-audio">
+                    UPLOAD FILE
+                  </button>
+                </div>
+
+                <div
+                  id="mic-recorder-space"
+                  class="recording-panel hidden"
+                  style="display: none"
+                >
+                  <div class="mic-visualizer-container">
+                    <div class="mic-ripple" id="visualizer-pulse"></div>
+                    <i
+                      class="fa-solid fa-microphone mic-record-icon"
+                      id="mic-main-icon"
+                    ></i>
+                  </div>
+                  <div class="waveform-fake-container" id="visualizer-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                  </div>
+                  <div class="timer-display" id="recording-timer">00:00</div>
+                  <div class="record-control-buttons">
+                    <button
+                      type="button"
+                      class="control-rec-btn start-rec"
+                      id="btn-start-record"
+                    >
+                      RECORD
+                    </button>
+                    <button
+                      type="button"
+                      class="control-rec-btn stop-rec hidden"
+                      id="btn-stop-record"
+                    >
+                      STOP
+                    </button>
+                  </div>
+                  <div id="recording-playback-space" class="hidden">
+                    <audio id="recorded-audio-element" controls></audio>
+                  </div>
+                </div>
+
+                <div id="audio-upload-space" class="recording-panel">
+                  <div class="file-uploader-dropzone" id="audio-dropzone">
+                    <input
+                      type="file"
+                      id="audio-file-input"
+                      accept="audio/*"
+                      class="hidden-file-input"
+                    />
+                    <div class="dropzone-prompt">
+                      <i class="fa-solid fa-file-audio"></i>
+                      <p>Select or drag WAV, MP3, or M4A files</p>
+                    </div>
+                    <div
+                      class="dropzone-preview hidden"
+                      id="audio-upload-preview"
+                    >
+                      <i class="fa-solid fa-headphones-simple font-large"></i>
+                      <span class="preview-filename">audio.mp3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="wizard-back-btn">
+                  <i class="fa-solid fa-chevron-left"></i> SELECT OTHER
+                </button>
+                <button
+                  type="button"
+                  class="wizard-confirm-btn"
+                  id="confirm-audio-btn"
+                >
+                  LINK AUDIO FILE
+                </button>
+              </div>
+            </div>
+
+            <div class="wizard-step-container hidden" id="wizard-pdf-step">
+              <h4 class="step-title">
+                <i class="fa-solid fa-file-import"></i> DIRECT FILE / RESOURCE
+                ATTACHMENT
+              </h4>
+              <div class="file-uploader-dropzone" id="pdf-dropzone">
+                <input
+                  type="file"
+                  id="pdf-file-input"
+                  class="hidden-file-input"
+                />
+                <div class="dropzone-prompt">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <p>Drag any file here or click to browse files</p>
+                  <span
+                    >Supported: JPG, PNG, PDF, Excel, Word, Audio, Video & more.
+                    Max: 15MB</span
+                  >
+                </div>
+                <div class="dropzone-preview hidden" id="pdf-upload-preview">
+                  <i class="fa-solid fa-circle-check text-green"></i>
+                  <span class="preview-filename">resource.pdf</span>
+                </div>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="wizard-back-btn">
+                  <i class="fa-solid fa-chevron-left"></i> SELECT OTHER
+                </button>
+                <button
+                  type="button"
+                  class="wizard-confirm-btn"
+                  id="confirm-pdf-btn"
+                >
+                  ATTACH RESOURCE
+                </button>
+              </div>
+            </div>
+
+            <div class="wizard-step-container hidden" id="wizard-link-step">
+              <h4 class="step-title">
+                <i class="fa-solid fa-link"></i> ASSOCIATE WEB URL / LINK
+              </h4>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div class="form-group" style="text-align: left">
+                  <label
+                    for="step-link-title"
+                    style="
+                      display: block;
+                      font-size: 0.8rem;
+                      margin-bottom: 6px;
+                      color: #a4b2c6;
+                      font-weight: 500;
+                    "
+                    >WEB LINK DISPLAY TITLE</label
+                  >
+                  <input
+                    type="text"
+                    id="step-link-title"
+                    placeholder="e.g., MDN Documentation, Spreadsheet Table, Video Tutorial..."
+                    style="
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 6px;
+                      background-color: #1e293b;
+                      border: 1px solid #334155;
+                      color: #fff;
+                    "
+                  />
+                </div>
+                <div class="form-group" style="text-align: left">
+                  <label
+                    for="step-link-url"
+                    style="
+                      display: block;
+                      font-size: 0.8rem;
+                      margin-bottom: 6px;
+                      color: #a4b2c6;
+                      font-weight: 500;
+                    "
+                    >WEB HYPERLINK / URL (HTTPS://...)</label
+                  >
+                  <input
+                    type="url"
+                    id="step-link-url"
+                    placeholder="e.g., https://example.com/resources"
+                    style="
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 6px;
+                      background-color: #1e293b;
+                      border: 1px solid #334155;
+                      color: #fff;
+                    "
+                  />
+                </div>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="wizard-back-btn">
+                  <i class="fa-solid fa-chevron-left"></i> SELECT OTHER
+                </button>
+                <button
+                  type="button"
+                  class="wizard-confirm-btn"
+                  id="confirm-link-btn"
+                >
+                  INSERT WEB LINK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mindmap-editor-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box widescreen-modal">
+          <button class="modal-close" id="close-mindmap-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i class="fa-solid fa-palette"></i>
+            <h3>CONCEPTUAL DIAGRAMS AND MIND MAP DRAWING BOARD</h3>
+            <span class="toolbar-hint-label" id="mindmap-target-title"
+              >PAGE: N/A</span
+            >
+          </div>
+          <div class="mindmap-workspace">
+            <div class="mindmap-sidebar-tools">
+              <div class="tool-section-title">ACTIVE TOOL</div>
+              <button
+                class="side-tool-btn active"
+                data-tool="brush"
+                title="Free Brush Sketch"
+              >
+                <i class="fa-solid fa-paint-brush"></i><span>Brush</span>
+              </button>
+              <button
+                class="side-tool-btn"
+                data-tool="text"
+                title="Draggable Node text"
+              >
+                <i class="fa-solid fa-font"></i><span>Node Text</span>
+              </button>
+              <button
+                class="side-tool-btn"
+                data-tool="connector"
+                title="Draggable Connector Link"
+              >
+                <i class="fa-solid fa-bezier-curve"></i><span>Connector</span>
+              </button>
+              <button
+                class="side-tool-btn"
+                data-tool="eraser"
+                title="Erase Canvas Strokes"
+              >
+                <i class="fa-solid fa-eraser"></i><span>Eraser</span>
+              </button>
+
+              <div class="tool-section-title">PALETTE CHROMATICS</div>
+              <div class="pallete-grid">
+                <button
+                  class="color-dot active"
+                  style="background-color: #00bcff"
+                  data-color="#00bcff"
+                ></button>
+                <button
+                  class="color-dot"
+                  style="background-color: #39ff6e"
+                  data-color="#39ff6e"
+                ></button>
+                <button
+                  class="color-dot"
+                  style="background-color: #00ffff"
+                  data-color="#00ffff"
+                ></button>
+                <button
+                  class="color-dot"
+                  style="background-color: #ffff00"
+                  data-color="#ffff00"
+                ></button>
+                <button
+                  class="color-dot"
+                  style="background-color: #fca5a5"
+                  data-color="#fca5a5"
+                ></button>
+                <button
+                  class="color-dot"
+                  style="background-color: #ffffff"
+                  data-color="#ffffff"
+                ></button>
+              </div>
+
+              <div class="slider-wrapper">
+                <div class="slider-labels">
+                  <span>Thickness</span>
+                  <span id="brush-size-indicator">4 px</span>
+                </div>
+                <input
+                  type="range"
+                  id="mindmap-brush-range"
+                  min="1"
+                  max="25"
+                  value="4"
+                />
+              </div>
+
+              <div class="tool-section-title">TEMPLATE BLUEPRINTS</div>
+              <button class="template-btn" id="tpl-concept-map">
+                <i class="fa-solid fa-network-wired"></i> Basic Map
+              </button>
+              <button class="template-btn" id="tpl-flowchart">
+                <i class="fa-solid fa-right-left"></i> Simple Loop
+              </button>
+
+              <div class="divider-horizontal"></div>
+              <button class="danger-utility-btn" id="btn-reset-canvas">
+                <i class="fa-solid fa-trash-can"></i> Clear All
+              </button>
+            </div>
+
+            <div class="mindmap-canvas-container">
+              <div class="floating-tips-bar">
+                <span
+                  >Brush tool works perfectly for manual drawing of cards and
+                  layouts. Click 'Node Text' to append draggable nodes.</span
+                >
+              </div>
+              <canvas id="mindmap-interactive-canvas"></canvas>
+              <input
+                type="text"
+                id="mindmap-direct-text-entry"
+                class="canvas-text-entry-field hidden"
+                placeholder="Type concept node text here..."
+              />
+            </div>
+          </div>
+          <div class="mindmap-footer-row">
+            <div class="canvas-state-controls">
+              <button id="mindmap-undo-btn" class="util-control-btn">
+                <i class="fa-solid fa-arrow-rotate-left"></i> UNDO
+              </button>
+            </div>
+            <div class="canvas-action-group">
+              <button class="cancel-modal-btn" id="cancel-mindmap-btn">
+                CANCEL
+              </button>
+              <button class="save-canvas-btn" id="save-mindmap-to-page-btn">
+                SAVE DIAGRAM TO PAGE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mindmap-fullscreen-view-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box image-view-modal">
+          <button class="modal-close" id="close-fullscreen-view-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="fullscreen-image-wrapper">
+            <img id="fullscreen-view-img" src="" alt="Mind Map View" />
+          </div>
+        </div>
+      </div>
+
+      <div id="stats-summary-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box">
+          <button class="modal-close" id="close-stats-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>IT Dictionary Dashboard & Statistics</h3>
+          </div>
+          <div class="modal-body">
+            <div class="detailed-stats-grid">
+              <div class="stat-large-card">
+                <span class="card-num" id="stat-card-total">0</span>
+                <span class="card-label">Active Book Pages</span>
+              </div>
+              <div class="stat-subcard">
+                <div class="subcard-item">
+                  <i class="fa-solid fa-paragraph"></i>
+                  <div>
+                    <span id="stat-count-txt">0</span>
+                    <p>Texts</p>
+                  </div>
+                </div>
+                <div class="subcard-item">
+                  <i class="fa-solid fa-diagram-project"></i>
+                  <div>
+                    <span id="stat-count-map">0</span>
+                    <p>Mind Maps</p>
+                  </div>
+                </div>
+                <div class="subcard-item">
+                  <i class="fa-solid fa-image"></i>
+                  <div>
+                    <span id="stat-count-img">0</span>
+                    <p>Images</p>
+                  </div>
+                </div>
+                <div class="subcard-item">
+                  <i class="fa-solid fa-microphone"></i>
+                  <div>
+                    <span id="stat-count-aud">0</span>
+                    <p>Audios</p>
+                  </div>
+                </div>
+                <div class="subcard-item">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <div>
+                    <span id="stat-count-pdf">0</span>
+                    <p>Handouts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="distribution-alphabet-chart">
+              <h4>Lexicographical Distribution</h4>
+              <div
+                class="letter-distribution-bars"
+                id="letter-bars-distribution"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Book Page Confirmation Modal -->
+      <div id="delete-page-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box">
+          <button class="modal-close" id="close-delete-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i
+              class="fa-solid fa-triangle-exclamation"
+              style="color: rgb(255, 77, 77)"
+            ></i>
+            <h3>Delete Book Page</h3>
+          </div>
+          <div class="modal-body" style="padding-top: 5px">
+            <p
+              style="
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #cbd5e1;
+                margin-bottom: 20px;
+              "
+            >
+              Are you sure you want to delete the page
+              <strong id="delete-page-title" style="color: #00bcff"></strong>?
+              This action is permanent and will permanently erase all attached
+              materials, diagrams, custom drawings, voice logs, and worksheets.
+            </p>
+            <div
+              class="modal-footer"
+              style="
+                display: flex;
+                justify-content: flex-end;
+                gap: 12px;
+                margin-top: 15px;
+              "
+            >
+              <button
+                type="button"
+                class="form-cancel-btn"
+                id="cancel-delete-modal"
+              >
+                CANCEL
+              </button>
+              <button
+                type="button"
+                class="form-submit-btn"
+                id="confirm-delete-modal-btn"
+                style="
+                  background: rgb(255, 77, 77);
+                  border-color: rgb(255, 77, 77);
+                  color: #fff;
+                "
+              >
+                DELETE PAGE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Letters Search Modal -->
+      <div id="letters-search-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box">
+          <button class="modal-close" id="close-letters-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i
+              class="fa-solid fa-arrow-down-a-z"
+              style="color: var(--accent-color)"
+            ></i>
+            <h3>SEARCH BY LETTER (A - Z)</h3>
+          </div>
+          <div class="modal-body" style="padding-top: 10px">
+            <p
+              id="letters-modal-subtitle"
+              style="
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #cbd5e1;
+                margin-bottom: 20px;
+                text-align: center;
+              "
+            >
+              Select a letter to jump directly to its definitions list:
+            </p>
+            <div
+              class="alphabet-buttons-grid-modal"
+              id="modal-letter-shortcuts"
+              style="
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add PDF & Documentation Modal -->
+      <div id="add-doc-entry-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box">
+          <button class="modal-close" id="close-add-doc-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="modal-header">
+            <i class="fa-solid fa-file-invoice" style="color: #0d9488"></i>
+            <h3>UPLOAD ATTACHMENTS (AUTO-CATEGORIZED)</h3>
+          </div>
+          <div class="modal-body" style="padding-top: 10px">
+            <form id="add-doc-entry-form" onsubmit="return false;">
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  style="
+                    display: block;
+                    margin-bottom: 6px;
+                    font-weight: 500;
+                    font-size: 0.85rem;
+                    color: #94a3b8;
+                  "
+                  >ATTACH ANY FILE (PHOTOS, VIDEOS, AUDIO, PDF, EXCEL, WORD,
+                  ETC.)</label
+                >
+                <div
+                  id="doc-pdf-dropzone"
+                  class="file-uploader-dropzone"
+                  style="
+                    border: 2px dashed #0d9488;
+                    background: rgba(13, 148, 136, 0.05);
+                    padding: 25px;
+                    border-radius: var(--border-radius-md);
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    height: auto;
+                  "
+                >
+                  <div class="dropzone-prompt">
+                    <i
+                      class="fa-solid fa-cloud-arrow-up"
+                      style="
+                        font-size: 1.8rem;
+                        color: #0d9488;
+                        margin-bottom: 10px;
+                      "
+                    ></i>
+                    <p style="font-size: 0.85rem; color: #94a3b8">
+                      Drag file here or click to select from file system
+                    </p>
+                  </div>
+                  <div
+                    id="doc-pdf-upload-preview"
+                    class="hidden dropzone-preview"
+                  >
+                    <i
+                      class="fa-solid fa-file-import"
+                      style="
+                        font-size: 2rem;
+                        color: #0d9488;
+                        margin-bottom: 8px;
+                      "
+                    ></i>
+                    <span
+                      class="preview-filenameValue"
+                      id="doc-pdf-preview-filename"
+                      style="
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                        word-break: break-all;
+                        color: #0d9488;
+                      "
+                      >document.pdf</span
+                    >
+                  </div>
+                </div>
+                <input
+                  type="file"
+                  id="doc-pdf-file-input"
+                  class="hidden-file-input"
+                  style="display: none"
+                />
+              </div>
+
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  for="doc-link-input"
+                  style="
+                    display: block;
+                    margin-bottom: 6px;
+                    font-weight: 500;
+                    font-size: 0.85rem;
+                    color: #94a3b8;
+                  "
+                  >ADD WEB LINK / URL</label
+                >
+                <input
+                  type="url"
+                  id="doc-link-input"
+                  placeholder="e.g., https://developer.mozilla.org/en-US"
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 6px;
+                    background-color: #1e293b;
+                    border: 1px solid #334155;
+                    color: #fff;
+                  "
+                />
+              </div>
+
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  for="doc-content-input"
+                  style="
+                    display: block;
+                    margin-bottom: 6px;
+                    font-weight: 500;
+                    font-size: 0.85rem;
+                    color: #94a3b8;
+                  "
+                  >DOCUMENTATION SUMMARY & NOTES</label
+                >
+                <textarea
+                  id="doc-content-input"
+                  rows="4"
+                  placeholder="Write any study paragraphs, instructions, notes, or explanations..."
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 6px;
+                    background-color: #1e293b;
+                    border: 1px solid #334155;
+                    color: #fff;
+                    font-family: inherit;
+                    resize: vertical;
+                  "
+                ></textarea>
+              </div>
+
+              <div
+                class="modal-footer"
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  gap: 12px;
+                  margin-top: 15px;
+                "
+              >
+                <button
+                  type="button"
+                  class="form-cancel-btn"
+                  id="cancel-add-doc-modal"
+                >
+                  CANCEL
+                </button>
+                <button
+                  type="submit"
+                  class="form-submit-btn"
+                  id="save-doc-page-btn"
+                  style="
+                    background-color: #0d9488;
+                    border-color: #0d9488;
+                    color: #fff;
+                  "
+                >
+                  UPLOAD & CATEGORIZE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
