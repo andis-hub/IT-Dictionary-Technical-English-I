@@ -2737,7 +2737,7 @@ async function probarStorage() {
   console.log("Intentando guardar...");
   
   const { data, error } = await _supabase
-    .from('date')
+    .from('Data')
     .insert([ { texto: "Hola desde mi web", autor: "Usuario" } ]);
 
   if (error) {
