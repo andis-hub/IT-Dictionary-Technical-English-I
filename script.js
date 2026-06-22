@@ -1,6 +1,6 @@
 const { createClient } = supabase;
 
-const SUPABASE_URL = "https://vmeuwbdunjdzrtwjkdt.supabase.co";
+const SUPABASE_URL = 'https://vmeuwbdunjdzrtvwjakf.supabase.co';
 const SUPABASE_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtZXV3YmR1bmpkenJ0dndqYWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNzQzMTcsImV4cCI6MjA5NzY1MDMxN30.CWma-lPSkpf5yOVf8xZD4Yf_9psNWnCVQnmtNX1zrpU";
 
