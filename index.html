@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Dictionary | Technical English I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>IT Dictionary</h1>
+
+        <nav class="nav">
+            <a href="#" onclick="showTab('home'); return false;">Home</a>
+            <a href="#" onclick="showTab('introduction'); return false;">Introduction</a>
+            <a href="#" onclick="showTab('dictionary'); return false;">A-Z Dictionary</a>
+            <a href="#" onclick="showTab('operating-systems'); return false;">Operating Systems</a>
+            <a href="#" onclick="showTab('email'); return false;">E-Mail</a>
+            <a href="#" onclick="showTab('reported-speech'); return false;">Reported Speech</a>
+            <a href="#" onclick="showTab('digital-language'); return false;">Digital Language</a>
+            <a href="#" onclick="showTab('collocations'); return false;">Collocations</a>
+            <a href="#" onclick="showTab('logics'); return false;">Logics</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HOME -->
+        <section id="home" class="tab-content active">
+
+            <div class="hero">
+                <div class="content-hero">
+                    <h2>IT Dictionary</h2>
+                    <h3>Technical English I</h3>
+
+                    <p><strong>Members:</strong> Andis Peña &amp; Matias Lis</p>
+                    <p><strong>Group:</strong> 2°MB</p>
+                    <p><strong>Subject:</strong> Technical English I</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section id="introduction" class="tab-content">
+
+            <div class="introduction">
+                <div class="content-introduction">
+
+                    <h2>Welcome to our IT Dictionary!</h2>
+
+                    <p>
+                        This dictionary was created as part of the Technical English I
+                        subject. Its main purpose is to help students learn and understand
+                        English vocabulary related to information technology.
+                    </p>
+
+                    <p>
+                        Here you can find definitions, translations and examples of
+                        different technical and general English words.
+                    </p>
+
+                    <p>
+                        You can also explore different categories such as Operating Systems, E-Mail,
+                        Reported Speech, Digital Language, Collocations and Logics.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- A-Z DICTIONARY -->
+        <section id="dictionary" class="tab-content">
+
+            <div class="categories">
+
+                <h2>A-Z Dictionary</h2>
+
+                <p>Select a letter to explore the vocabulary.</p>
+
+                <div class="nav-category" id="alphabet"></div>
+
+                <div class="content-categories" id="dictionary-content">
+
+                    <p>Select a letter to see its words.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OPERATING SYSTEMS -->
+        <section id="operating-systems" class="tab-content">
+
+            <div class="categories">
+
+                <h2>Operating Systems</h2>
+
+                <div class="report-box">
+
+                    <h3>What is an Operating System?</h3>
+
+                    <p>
+                        An Operating System (OS) is a set of software programs that lies between application software
+                        and the computer hardware. Without an OS, a brand-new computer cannot perform any task.
+                    </p>
+
+                    <h3>Conceptual Layers of an OS</h3>
+
+                    <div class="example-box">
+                        <p><strong>System Architecture Layers (From user to machine):</strong></p>
+                        <ol class="examples-list">
+                            <li><strong>User:</strong> The person interacting with the computer.</li>
+                            <li><strong>Applications Programs:</strong> Software used to perform tasks (e.g., word
+                                processing, payroll, games).</li>
+                            <li><strong>Operating System:</strong> Software interface managing system resources and
+                                hardware interaction.</li>
+                            <li><strong>Hardware:</strong> Physical components (CPU, Memory, Disks, Input/Output
+                                devices).</li>
+                        </ol>
+                    </div>
+
+                    <h3>Key Concepts &amp; Functions</h3>
+
+                    <div class="collocations-grid">
+
+                        <div class="collocation-item">
+                            <h4>Supervisor Program</h4>
+                            <p>Programa supervisor</p>
+                            <p><strong>Definition:</strong> The most important OS program that manages the system,
+                                controls operations, and loads other programs into memory.</p>
+                            <p><strong>Example:</strong> Most of the supervisor program remains in memory while the
+                                system is running.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Resident vs. Non-Resident</h4>
+                            <p>Residente vs. No Residente</p>
+                            <p><strong>Definition:</strong> Resident programs remain constantly in memory. Non-resident
+                                programs are loaded from disk only when needed.</p>
+                            <p><strong>Example:</strong> The supervisor is resident, whereas secondary utilities are
+                                non-resident.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Command-Line Interface (CLI)</h4>
+                            <p>Interfaz de línea de comandos</p>
+                            <p><strong>Definition:</strong> Text-based interface where users type explicit commands
+                                (e.g., Unix commands like <code>date</code>, <code>ls</code>, <code>passwd</code>).</p>
+                            <p><strong>Example:</strong> MS-DOS and early Unix systems relied heavily on CLI
+                                environments.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Graphical User Interface (GUI)</h4>
+                            <p>Interfaz gráfica de usuario</p>
+                            <p><strong>Definition:</strong> Visual interface using icons, windows, menus, and a pointer
+                                for interaction.</p>
+                            <p><strong>Example:</strong> GUIs replace typed commands with visual interactions using a
+                                mouse.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Memory &amp; Process Management</h4>
+                            <p>Gestión de memoria y procesos</p>
+                            <p><strong>Definition:</strong> The OS allocates RAM, handles Virtual Memory when RAM is
+                                full, and schedules CPU time across processes.</p>
+                            <p><strong>Example:</strong> Efficient multitasking requires the OS scheduler to manage CPU
+                                usage.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>File Systems &amp; Paths</h4>
+                            <p>Sistemas de archivos y rutas</p>
+                            <p><strong>Definition:</strong> Structured rules for storing data (e.g., NTFS for Windows,
+                                ext4 for Linux, APFS for macOS).</p>
+                            <p><strong>Example:</strong> Windows uses backslashes (C:\), while Unix/Linux systems use
+                                forward slashes (/home/user).</p>
+                        </div>
+
+                    </div>
+
+                    <h3>Language Work: -ing form as a Noun (Gerunds)</h3>
+
+                    <p>
+                        In Technical English, the <code>-ing</code> form of a verb can function as a noun (subject or
+                        object) or follow a preposition to describe OS operations:
+                    </p>
+
+                    <div class="example-box">
+                        <p><strong>Examples from Technical Texts:</strong></p>
+                        <ul class="examples-list">
+                            <li><strong>Managing</strong> the computer's resources is an important function of the
+                                operating system.</li>
+                            <li>The OS starts <strong>running</strong> the user interface as soon as the PC is switched
+                                on.</li>
+                            <li>Don't switch off without <strong>closing down</strong> your PC.</li>
+                            <li>You can find information on the Internet by <strong>using</strong> a search engine.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Operating Systems Overview</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>OS / Architecture</th>
+                                <th>File System</th>
+                                <th>Interface Type</th>
+                                <th>Key Characteristics</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><strong>Windows</strong></td>
+                                <td>NTFS / FAT32</td>
+                                <td>GUI / PowerShell</td>
+                                <td>Dominates desktop PCs; uses drive letters (C:\) and Registry configuration.</td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Linux / Unix</strong></td>
+                                <td>ext4</td>
+                                <td>CLI (Terminal) / GUI</td>
+                                <td>Open-source, highly stable; powers servers and educational hardware (Plan Ceibal).
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>macOS</strong></td>
+                                <td>APFS</td>
+                                <td>GUI / Terminal</td>
+                                <td>Optimized for Apple SSD hardware; uses mounting points (/Volumes/).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- E-MAIL -->
+        <section id="email" class="tab-content">
+
+            <div class="categories">
+
+                <h2>E-Mail</h2>
+
+                <div class="email-template">
+
+                    <h3>What is an E-Mail?</h3>
+
+                    <p>
+                        An e-mail is an electronic message sent from one person
+                        to another using the internet.
+                    </p>
+
+                    <h3>Structure of an E-Mail</h3>
+
+                    <div class="email-structure-guide">
+
+                        <p><strong>1. Subject:</strong> The main topic of the message.</p>
+
+                        <p><strong>2. Greeting:</strong> A polite way to start the message.</p>
+
+                        <p><strong>3. Introduction:</strong> Explain the reason for writing.</p>
+
+                        <p><strong>4. Body:</strong> Include the main information.</p>
+
+                        <p><strong>5. Closing:</strong> End the message politely.</p>
+
+                        <p><strong>6. Signature:</strong> Include your name.</p>
+
+                    </div>
+
+                    <h3>Example of an E-Mail</h3>
+
+                    <div class="email-example">
+
+                        <p><strong>To:</strong> teacher@example.com</p>
+                        <p><strong>Subject:</strong> English Assignment</p>
+
+                        <hr>
+
+                        <p>Dear Teacher,</p>
+
+                        <p>
+                            I am writing to ask about the English assignment.
+                            Could you please explain the instructions?
+                        </p>
+
+                        <p>Thank you for your time.</p>
+
+                        <p>Best regards,</p>
+                        <p>Andis Peña</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTED SPEECH -->
+        <section id="reported-speech" class="tab-content">
+
+            <div class="categories">
+
+                <h2>Reported Speech</h2>
+
+                <div class="report-box">
+
+                    <h3>What is Reported Speech?</h3>
+
+                    <p>
+                        Reported Speech is used to tell someone what another
+                        person said without repeating their exact words.
+                    </p>
+
+                    <h3>Direct Speech</h3>
+
+                    <p>
+                        Direct Speech repeats the exact words spoken by a person.
+                    </p>
+
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <p>She said, "I am studying English."</p>
+                    </div>
+
+                    <h3>Reported Speech</h3>
+
+                    <p>
+                        Reported Speech communicates the same information
+                        without using the speaker's exact words.
+                    </p>
+
+                    <div class="example-box">
+                        <p><strong>Example:</strong></p>
+                        <p>She said that she was studying English.</p>
+                    </div>
+
+                    <h3>Examples</h3>
+
+                    <ul class="examples-list">
+
+                        <li>
+                            <strong>Direct:</strong> He said, "I am tired."
+                            <br>
+                            <strong>Reported:</strong> He said that he was tired.
+                        </li>
+
+                        <li>
+                            <strong>Direct:</strong> She said, "I like computers."
+                            <br>
+                            <strong>Reported:</strong> She said that she liked computers.
+                        </li>
+
+                        <li>
+                            <strong>Direct:</strong> They said, "We are working."
+                            <br>
+                            <strong>Reported:</strong> They said that they were working.
+                        </li>
+
+                        <li>
+                            <strong>Direct:</strong> He said, "I will study."
+                            <br>
+                            <strong>Reported:</strong> He said that he would study.
+                        </li>
+
+                    </ul>
+
+                    <h3>Common Changes</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Direct Speech</th>
+                                <th>Reported Speech</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Am / Is</td>
+                                <td>Was</td>
+                            </tr>
+
+                            <tr>
+                                <td>Are</td>
+                                <td>Were</td>
+                            </tr>
+
+                            <tr>
+                                <td>Will</td>
+                                <td>Would</td>
+                            </tr>
+
+                            <tr>
+                                <td>Can</td>
+                                <td>Could</td>
+                            </tr>
+
+                            <tr>
+                                <td>Have / Has</td>
+                                <td>Had</td>
+                            </tr>
+
+                            <tr>
+                                <td>Today</td>
+                                <td>That day</td>
+                            </tr>
+
+                            <tr>
+                                <td>Tomorrow</td>
+                                <td>The next day</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIGITAL LANGUAGE -->
+        <section id="digital-language" class="tab-content">
+
+            <div class="categories">
+
+                <h2>Digital Language</h2>
+
+                <div class="report-box">
+
+                    <h3>What is Digital Language?</h3>
+
+                    <p>
+                        Digital Language is the way people communicate through
+                        digital devices, social networks, messaging applications
+                        and the internet.
+                    </p>
+
+                    <h3>Common Expressions</h3>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Expression</th>
+                                <th>Meaning</th>
+                                <th>Translation</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>LOL</td>
+                                <td>Laughing Out Loud</td>
+                                <td>Reírse en voz alta</td>
+                            </tr>
+
+                            <tr>
+                                <td>BRB</td>
+                                <td>Be Right Back</td>
+                                <td>Vuelvo enseguida</td>
+                            </tr>
+
+                            <tr>
+                                <td>BTW</td>
+                                <td>By The Way</td>
+                                <td>Por cierto</td>
+                            </tr>
+
+                            <tr>
+                                <td>OMG</td>
+                                <td>Oh My God</td>
+                                <td>¡Dios mío!</td>
+                            </tr>
+
+                            <tr>
+                                <td>IDK</td>
+                                <td>I Don't Know</td>
+                                <td>No lo sé</td>
+                            </tr>
+
+                            <tr>
+                                <td>ASAP</td>
+                                <td>As Soon As Possible</td>
+                                <td>Lo antes posible</td>
+                            </tr>
+
+                            <tr>
+                                <td>FYI</td>
+                                <td>For Your Information</td>
+                                <td>Para tu información</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COLLOCATIONS -->
+        <section id="collocations" class="tab-content">
+
+            <div class="categories">
+
+                <h2>Collocations</h2>
+
+                <div class="collocations-container">
+
+                    <h3>What are Collocations?</h3>
+
+                    <p>
+                        Collocations are combinations of words that are commonly
+                        used together in English. They sound natural to native speakers.
+                    </p>
+
+                    <h3>Common Collocations</h3>
+
+                    <div class="collocations-grid">
+
+                        <div class="collocation-item">
+                            <h4>Make a decision</h4>
+                            <p>Tomar una decisión</p>
+                            <p><strong>Example:</strong> We need to make a decision today.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Do homework</h4>
+                            <p>Hacer los deberes</p>
+                            <p><strong>Example:</strong> I have to do my homework.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Take a break</h4>
+                            <p>Tomar un descanso</p>
+                            <p><strong>Example:</strong> Let's take a break after studying.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Pay attention</h4>
+                            <p>Prestar atención</p>
+                            <p><strong>Example:</strong> Please pay attention in class.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Make progress</h4>
+                            <p>Progresar</p>
+                            <p><strong>Example:</strong> She is making progress in English.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Save time</h4>
+                            <p>Ahorrar tiempo</p>
+                            <p><strong>Example:</strong> This application helps us save time.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Keep in touch</h4>
+                            <p>Mantenerse en contacto</p>
+                            <p><strong>Example:</strong> We keep in touch by e-mail.</p>
+                        </div>
+
+                        <div class="collocation-item">
+                            <h4>Make sure</h4>
+                            <p>Asegurarse</p>
+                            <p><strong>Example:</strong> Make sure the computer is turned off.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGICS -->
+        <section id="logics" class="tab-content">
+
+            <div class="categories">
+
+                <h2>Logics</h2>
+
+                <div class="report-box">
+
+                    <h3>What is Logic?</h3>
+
+                    <p>
+                        Logic is the study of correct reasoning. It helps us
+                        analyze information, identify relationships and reach
+                        conclusions.
+                    </p>
+
+                    <h3>Types of Reasoning</h3>
+
+                    <div class="example-box">
+
+                        <h4>Deductive Reasoning</h4>
+
+                        <p>
+                            Deductive reasoning starts with general information
+                            and reaches a specific conclusion.
+                        </p>
+
+                        <p><strong>Example:</strong></p>
+
+                        <p>All humans are mortal.</p>
+                        <p>Socrates is human.</p>
+                        <p>Therefore, Socrates is mortal.</p>
+
+                    </div>
+
+                    <div class="example-box">
+
+                        <h4>Inductive Reasoning</h4>
+
+                        <p>
+                            Inductive reasoning uses specific observations
+                            to form a general conclusion.
+                        </p>
+
+                        <p><strong>Example:</strong></p>
+
+                        <p>The sun has risen every morning.</p>
+                        <p>Therefore, the sun will probably rise tomorrow.</p>
+
+                    </div>
+
+                    <h3>Important Concepts</h3>
+
+                    <ul class="examples-list">
+
+                        <li><strong>Premise:</strong> A statement that supports an argument.</li>
+
+                        <li><strong>Conclusion:</strong> A result reached through reasoning.</li>
+
+                        <li><strong>Validity:</strong> The logical structure of an argument.</li>
+
+                        <li><strong>Soundness:</strong> An argument that is valid and has true premises.</li>
+
+                        <li><strong>Evidence:</strong> Information used to support a statement.</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

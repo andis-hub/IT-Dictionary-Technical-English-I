@@ -1,0 +1,632 @@
+/* ================================
+GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(231, 176, 110);
+    color: #252525;
+    line-height: 1.6;
+}
+
+/* ================================
+HEADER
+================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    background-color: antiquewhite;
+    z-index: 1000;
+
+
+}
+
+.header h1 {
+    color: rgb(113, 48, 48);
+    font-size: 1.7rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav a {
+    color: #252525;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: rgb(113, 48, 48);
+}
+
+/* ================================
+MAIN AND SECTIONS
+================================ */
+
+main {
+    padding-top: 75px;
+}
+
+.tab-content {
+    display: none;
+    min-height: 100vh;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ================================
+HOME / HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url("main_photo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+
+}
+
+.content-hero {
+    background-color: rgb(96, 113, 45);
+    color: white;
+
+    padding: 35px;
+    border-radius: 10px;
+
+    text-align: center;
+
+    max-width: 550px;
+    width: 100%;
+
+    transition: 0.2s;
+
+
+}
+
+.content-hero:hover {
+    transform: scale(1.03);
+}
+
+.content-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.content-hero h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.content-hero p {
+    margin: 8px 0;
+}
+
+/* ================================
+INTRODUCTION
+================================ */
+
+.introduction {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(231, 176, 110);
+
+
+}
+
+.content-introduction {
+    width: 60%;
+    max-width: 800px;
+
+    padding: 35px;
+
+    background-color: rgb(96, 113, 45);
+    color: white;
+
+    border-radius: 10px;
+    text-align: center;
+
+    transition: 0.2s;
+
+
+}
+
+.content-introduction:hover {
+    transform: scale(1.02);
+}
+
+.content-introduction h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.content-introduction p {
+    margin-bottom: 15px;
+}
+
+/* ================================
+CATEGORIES
+================================ */
+
+.categories {
+    min-height: 100vh;
+    padding: 50px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(231, 176, 110);
+
+
+}
+
+.categories>h2 {
+    font-size: 2.2rem;
+    color: rgb(113, 48, 48);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.categories>p {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ================================
+ALPHABET NAVIGATION
+================================ */
+
+.nav-category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    margin-bottom: 30px;
+
+    max-width: 900px;
+
+
+}
+
+.nav-category button {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    color: #e63946;
+
+    border: 2px solid #e63946;
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+
+
+}
+
+.nav-category button:hover {
+    background-color: #e63946;
+    color: white;
+
+    transform: translateY(-3px);
+
+
+}
+
+/* ================================
+DICTIONARY CONTENT
+================================ */
+
+.content-categories {
+    width: 100%;
+    max-width: 900px;
+}
+
+.content-categories>h3 {
+    color: rgb(113, 48, 48);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.word-block {
+    background-color: antiquewhite;
+
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+    border-left: 6px solid rgb(96, 113, 45);
+
+    transition: 0.2s;
+
+
+}
+
+.word-block:hover {
+    transform: translateY(-3px);
+}
+
+.word-block h3 {
+    color: rgb(113, 48, 48);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.word-block p {
+    margin-bottom: 10px;
+}
+
+.word-block h4 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: rgb(96, 113, 45);
+}
+
+.word-block ul {
+    padding-left: 25px;
+}
+
+.word-block li {
+    margin-bottom: 7px;
+}
+
+/* ================================
+EMAIL
+================================ */
+
+.email-template {
+    width: 100%;
+    max-width: 850px;
+
+    background-color: antiquewhite;
+
+    padding: 30px;
+    border-radius: 10px;
+
+
+}
+
+.email-template h3 {
+    color: rgb(113, 48, 48);
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.email-template h3:first-child {
+    margin-top: 0;
+}
+
+.email-structure-guide {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.email-structure-guide p {
+    margin-bottom: 10px;
+}
+
+.email-example {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.email-example p {
+    margin-bottom: 12px;
+}
+
+.email-example hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* ================================
+REPORTED SPEECH & OPERATING SYSTEMS
+================================ */
+
+.report-box {
+    width: 100%;
+    max-width: 900px;
+
+    background-color: antiquewhite;
+
+    padding: 30px;
+    border-radius: 10px;
+
+
+}
+
+.report-box h3 {
+    color: rgb(113, 48, 48);
+    font-size: 1.4rem;
+
+    margin-top: 25px;
+    margin-bottom: 12px;
+
+
+}
+
+.report-box h3:first-child {
+    margin-top: 0;
+}
+
+.report-box h4 {
+    color: rgb(96, 113, 45);
+    margin-bottom: 10px;
+}
+
+.report-box p {
+    margin-bottom: 12px;
+}
+
+.example-box {
+    background-color: white;
+
+    padding: 20px;
+    margin: 15px 0;
+
+    border-radius: 8px;
+    border-left: 5px solid rgb(96, 113, 45);
+
+
+}
+
+/* ================================
+TABLES
+================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+
+}
+
+th {
+    background-color: rgb(96, 113, 45);
+    color: white;
+
+    padding: 13px;
+    text-align: left;
+
+
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f5eadb;
+}
+
+/* ================================
+EXAMPLES LIST
+================================ */
+
+.examples-list {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+.examples-list li {
+    margin-bottom: 15px;
+}
+
+/* ================================
+COLLOCATIONS & GRID CARDS
+================================ */
+
+.collocations-container {
+    width: 100%;
+    max-width: 1000px;
+
+    background-color: antiquewhite;
+
+    padding: 30px;
+    border-radius: 10px;
+
+
+}
+
+.collocations-container h3 {
+    color: rgb(113, 48, 48);
+    margin-bottom: 15px;
+}
+
+.collocations-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+    margin-top: 25px;
+
+
+}
+
+.collocation-item {
+    background-color: white;
+
+    padding: 20px;
+    border-radius: 8px;
+
+    border-left: 5px solid rgb(96, 113, 45);
+
+    transition: 0.2s;
+
+
+}
+
+.collocation-item:hover {
+    transform: translateY(-3px);
+}
+
+.collocation-item h4 {
+    color: rgb(113, 48, 48);
+    margin-bottom: 10px;
+}
+
+.collocation-item p {
+    margin-bottom: 8px;
+}
+
+/* ================================
+RESPONSIVE DESIGN
+================================ */
+
+@media screen and (max-width: 1000px) {
+
+    .header {
+        position: relative;
+        justify-content: center;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    main {
+        padding-top: 0;
+    }
+
+    .content-introduction {
+        width: 85%;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .header {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 0.9rem;
+    }
+
+    .content-hero {
+        padding: 25px;
+    }
+
+    .content-hero h2 {
+        font-size: 2rem;
+    }
+
+    .content-introduction {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .content-introduction h2 {
+        font-size: 1.6rem;
+    }
+
+    .categories {
+        padding: 35px 15px;
+    }
+
+    .categories>h2 {
+        font-size: 1.8rem;
+    }
+
+    .word-block,
+    .report-box,
+    .email-template,
+    .collocations-container {
+        padding: 20px;
+    }
+
+    .collocations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+
+
+}
